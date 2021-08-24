@@ -2,7 +2,7 @@ import { BadRequestException, PipeTransform } from '@nestjs/common';
 import { PostStatus } from '../model/post';
 
 export class PostStatusValidation implements PipeTransform {
-  private readonly allowedStatuses: PostStatus[] = [
+  readonly allowedStatuses: PostStatus[] = [
     PostStatus.ARCHIVED,
     PostStatus.DRAFT,
     PostStatus.PUBLISHED,

@@ -21,7 +21,7 @@ export class PostsController {
   postService = new PostsService();
 
   @Get('/')
-  getPosts(@Query() filterDto: PostFilterDto): PostModel[] {
+  getPosts(@Query(ValidationPipe) filterDto: PostFilterDto): PostModel[] {
     if(Object.keys(filterDto).length){
       return this.postService.getPost(filterDto);
     }
